@@ -1,0 +1,46 @@
+{% extends 'predictions/base.html' %}
+
+{% block content %}
+<br>
+    <table id="case-table" class="table">
+        <thead class="thead-dark">
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Symptom-1</th>
+            <th>Symptom-2</th>
+            <th>Symptom-3</th>
+            <th>Symptom-4</th>
+            <th>Symptom-5</th>
+            <th>Predicted Disease</th>
+        </thead>
+        <tbody>
+            {% if user_cases %}
+            {% for case in user_cases %}
+            <tr>
+                <td>{{case.name}}</td>
+                <td>{{case.gender}}</td>
+                <td>{{case.age}}</td>
+                <td>{{case.symptom_1}}</td>
+                <td>{{case.symptom_2}}</td>
+                <td>{{case.symptom_3}}</td>
+                <td>{{case.symptom_4}}</td>
+                <td>{{case.symptom_5}}</td>
+                <td>{{case.predicted_disease}}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+
+<script>
+    $(document).ready(function () {
+        $('#case-table').dataTable({
+            "searching": true,
+            "paging": true,
+            "ordering": true
+        });
+    });
+</script>
+
+{% endblock %}

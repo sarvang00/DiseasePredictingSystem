@@ -1,0 +1,132 @@
+{% extends 'predictions/base.html' %}
+
+{% block content %}
+
+<form action="{% url 'test_patient' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <h1><u>Enter patient data</u></h1>
+        <br>
+        <div class="textbox">
+            <label for="name">
+                <h4>Name:</h4>
+            </label>
+            <input type="text" name="name" id="name" placeholder="John Doe" required/>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <label for="age">
+                    <h4>Age:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" aria-label="Age" name="age" id="age" placeholder="24" required>
+                </div>  
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label for="gender">
+                    <h4>Gender:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="gender">Options</label>
+                    </div>
+                    <select class="custom-select" id="gender" name="gender" required>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="n.a." selected>Other/Not Disclosed</option>
+                    </select>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <label for="symptom1">
+                    <h4>Symptom 1:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="symptom1">Options</label>
+                    </div>
+                    <select class="custom-select" id="symptom1" name="symptom1" required>
+                        <option selected>Choose...</option>
+                        {% for symptom in symptoms %}
+                        <option value="{{symptom}}">{{symptom}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label for="symptom2">
+                    <h4>Symptom 2:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="symptom2">Options</label>
+                    </div>
+                    <select class="custom-select" id="symptom2" name="symptom2" required>
+                        <option selected>Choose...</option>
+                        {% for symptom in symptoms %}
+                        <option value="{{symptom}}">{{symptom}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label for="symptom3">
+                    <h4>Symptom 3:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="symptom3">Options</label>
+                    </div>
+                    <select class="custom-select" id="symptom3" name="symptom3">
+                        <option selected>Choose...</option>
+                        {% for symptom in symptoms %}
+                        <option value="{{symptom}}">{{symptom}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label for="symptom4">
+                    <h4>Symptom 4:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="symptom4">Options</label>
+                    </div>
+                    <select class="custom-select" id="symptom4" name="symptom4">
+                        <option selected>Choose...</option>
+                        {% for symptom in symptoms %}
+                        <option value="{{symptom}}">{{symptom}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label for="symptom5">
+                    <h4>Symptom 5:</h4>
+                </label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="symptom5">Options</label>
+                    </div>
+                    <select class="custom-select" id="symptom5" name="symptom5">
+                        <option selected>Choose...</option>
+                        {% for symptom in symptoms %}
+                        <option value="{{symptom}}">{{symptom}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+            </div>
+        </div>
+        <button type="submit" class="btn-lg btn-primary">Submit</button>
+    </div>
+</form>
+
+
+{% endblock %}

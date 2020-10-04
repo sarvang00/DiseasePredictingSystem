@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patient Diagnosis System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="navbar-header">
+            <a href="{% url 'index' %}" class="navbar-brand">Patient Diagnosis System</a>
+        </div>
+    </nav>
+
+    <!--Alerts included here -->
+    {% include 'partials/_alerts.html' %}
+    
+	<div class="row no-gutters">
+		<div class="col-md-6 o-gutter">
+			<div class="leftside d-flex justify-content-center align-items-center">
+				<img src="{% static 'img/Image2.png' %}">
+			</div>
+		</div>
+		<div class="col-md-6 no-gutters">
+			<div class="rightside d-flex justify-content-center align-items-center">
+			<form class="login-box" action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+				<h1>Login</h1>
+				<div class="textbox">
+					<input type="text" placeholder="Username" name="username">
+				</div>
+				<div class="textbox">
+					<input type="password" placeholder="Password" name="password">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <a href="{% url 'registration_page' %}"><i class="fas fa-user-plus"></i> New here? Register!</a>
+                    </div>
+                </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
