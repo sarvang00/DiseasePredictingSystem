@@ -2,6 +2,8 @@ from django.http import request
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User, Group
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import cache_control
 
 # Create your views here.
 def index(request):
@@ -61,6 +63,8 @@ def login(request):
     else:
         return render(request, 'users/login.html')
 
+@cache_control(no_cache=True, must_revalidate=True)
+@login_required(login_url='/login/')
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)

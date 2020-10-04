@@ -9,6 +9,8 @@ from .models import HistoricalData
 from datetime import datetime
 
 # Create your views here.
+@cache_control(no_cache=True, must_revalidate=True)
+@login_required(login_url='/login/')
 def input_data(request):
     symptoms=['back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow_urine',
     'yellowing_of_eyes','acute_liver_failure','fluid_overload','swelling_of_stomach',
@@ -37,6 +39,8 @@ def input_data(request):
 
     return render(request, 'predictions/input_data.html', context=context)
 
+@cache_control(no_cache=True, must_revalidate=True)
+@login_required(login_url='/login/')
 def past_data(request):
 
     user_cases = HistoricalData.objects.all().filter(case_of=request.user.id).order_by('case_reg_date')
@@ -47,6 +51,8 @@ def past_data(request):
 
     return render(request, 'predictions/past_data.html', context=context)
 
+@cache_control(no_cache=True, must_revalidate=True)
+@login_required(login_url='/login/')
 def test_patient(request):
     if request.method == 'POST':
         name = request.POST['name']
