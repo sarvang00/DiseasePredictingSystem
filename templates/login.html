@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<div class="row no-gutters">
+		<div class="col-md-6 o-gutter">
+			<div class="leftside d-flex justify-content-center align-items-center">
+				<img src="{% static 'img/Image2.png' %}">
+			</div>
+		</div>
+		<div class="col-md-6 no-gutters">
+			<div class="rightside d-flex justify-content-center align-items-center">
+			<form class="login-box">
+				<h1>Login</h1>
+				<div class="textbox">
+					<input type="text" placeholder="Username" name="name">
+				</div>
+				<div class="textbox">
+					<input type="password" placeholder="Password" name="password">
+				</div>
+				<button type="button" class="btn btn-primary">Login</button>
+			</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
