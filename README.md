@@ -14,3 +14,4 @@ A project wehere we use clustering algorithms on patient symptoms and predict a 
 1. Better integrate prediction algorithms
 
 #### Note: Will require Posgres DB setup as in 'settings.py'
+#### Note: Jupyter Notebook of our algoritms is kept as 'Prediction system.ipynb'
