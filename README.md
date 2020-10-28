@@ -8,7 +8,7 @@ A project wehere we use clustering algorithms on patient symptoms and predict a 
 5. Make DB model to store data and predictions
 6. Messages(alerts) integration
 7. Sign up made
+8. Admin setup complete
 
 ## Tasks left
 1. Better integrate prediction algorithms
-2. Admin setup
