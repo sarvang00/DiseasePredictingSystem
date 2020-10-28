@@ -12,3 +12,5 @@ A project wehere we use clustering algorithms on patient symptoms and predict a 
 
 ## Tasks left
 1. Better integrate prediction algorithms
+
+#### Note: Will require Posgres DB setup as in 'settings.py'
