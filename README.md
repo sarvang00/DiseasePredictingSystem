@@ -10,5 +10,5 @@ A project wehere we use clustering algorithms on patient symptoms and predict a 
 7. Sign up made
 
 ## Tasks left
-1. Get Prediction Algos and integrate them
+1. Better integrate prediction algorithms them
 2. Admin setup
