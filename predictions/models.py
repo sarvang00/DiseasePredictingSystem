@@ -15,4 +15,4 @@ class HistoricalData(models.Model):
     symptom_3 = models.CharField(max_length=50, blank=True)
     symptom_4 = models.CharField(max_length=50, blank=True)
     symptom_5 = models.CharField(max_length=50, blank=True)
-    predicted_disease = models.CharField(max_length=50, blank=True)
+    predicted_disease = models.CharField(max_length=100, blank=True)
