@@ -15,3 +15,6 @@ A project wehere we use clustering algorithms on patient symptoms and predict a 
 
 #### Note: Will require Posgres DB setup as in 'settings.py'
 #### Note: Jupyter Notebook of our algoritms is kept as 'Prediction system.ipynb'
+
+#### NOTE
+**This project is now complete as far as its defined scope was concerned. Hence, it is now archived.**
